@@ -4,9 +4,10 @@ import "../styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">This is a test app for AWS Cognito</header>
-    </div>
+    <header className="App-header">
+      <div>How's the water</div>
+      <div>Login</div>
+    </header>
   );
 }
 
