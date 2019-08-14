@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/App.css";
 import { NavLink } from "react-router-dom";
 
-const LandingForm = () => {
+const LoginForm = () => {
   return (
     <header className="App-header">
       <div>How's the water</div>
@@ -19,4 +19,4 @@ const LandingForm = () => {
   );
 };
 
-export default LandingForm;
+export default LoginForm;
