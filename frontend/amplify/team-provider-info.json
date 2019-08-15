@@ -1,0 +1,28 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "frontend-dev-20190814205439-authRole",
+            "UnauthRoleArn": "arn:aws:iam::796945441120:role/frontend-dev-20190814205439-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::796945441120:role/frontend-dev-20190814205439-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "frontend-dev-20190814205439-deployment",
+            "UnauthRoleName": "frontend-dev-20190814205439-unauthRole",
+            "StackName": "frontend-dev-20190814205439",
+            "StackId": "arn:aws:cloudformation:us-east-2:796945441120:stack/frontend-dev-20190814205439/a4ad4eb0-beff-11e9-8261-022c6f51bf82"
+        },
+        "categories": {
+            "function": {
+                "frontend5e1c038eCustomMessage": {
+                    "REDIRECTURL": "http://localhost:3000/home",
+                    "EMAILSUBJECT": "",
+                    "EMAILMESSAGE": ""
+                }
+            },
+            "auth": {
+                "frontend5e1c038e": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"375832593101009\",\"client_secret\":\"646d9227fb619197b5ded6b2ad71da56\"},{\"ProviderName\":\"Google\",\"client_id\":\"954008350681-97qtjo83qt8fk4ngo1scbk4fubknf30f.apps.googleusercontent.com\",\"client_secret\":\"Dv2TCvhypaoa-uL6nxcz3WWa\"}]"
+                }
+            }
+        }
+    }
+}

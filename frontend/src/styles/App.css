@@ -1,14 +1,23 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
   background-color: teal;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
+  border: 1px solid white;
+}
+
+.login_link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav_links {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
