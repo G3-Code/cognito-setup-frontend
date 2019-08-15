@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { Auth } from "aws-amplify";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
@@ -13,6 +14,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
           );
           return <Component {...props} />;
         } else {
+          Auth.currentAuthenticatedUser().then(user => {
+            Auth.userSession(user).then(session =>
+              console.log(JSON.stringify(session.getIdToken().getJwtToken()))
+            );
+          });
+
           console.log(
             ":: PRIVATE ROUTE - TOKEN NOT AVAILABLE" +
               localStorage.getItem("token")

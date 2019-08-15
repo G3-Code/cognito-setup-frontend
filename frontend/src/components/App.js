@@ -6,10 +6,13 @@ import LoginForm from "./LoginForm";
 import PrivateRoute from "./PrivateRoute";
 import "../styles/App.css";
 
+// import { Auth } from "aws-amplify";
+
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={() => <LandingForm />} />
+      {/* <Route exact path="/" component={() => <LandingForm auth={Auth} />} /> */}
+      <Route exact path="/" component={LandingForm} />
       <Route exact path="/login" component={LoginForm} />
       <PrivateRoute exact path="/home" component={HomePageForm} />
     </Router>
