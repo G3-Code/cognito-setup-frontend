@@ -5,17 +5,17 @@ import { NavLink } from "react-router-dom";
 
 const LoginForm = () => {
   return (
-    <header className="App-header">
-      <div>How's the water</div>
-      <div className="nav_links">
-        <NavLink to="/login" className="login_link">
-          Login
-        </NavLink>
-        <NavLink to="/register" className="login_link">
-          Register
-        </NavLink>
-      </div>
-    </header>
+    <fragment>
+      <header className="App-header">
+        <div>How's the water</div>
+        <div className="nav_links">
+          <NavLink to="/login" className="login_link">
+            Login
+          </NavLink>
+        </div>
+      </header>
+      <div>This is the Login form.</div>
+    </fragment>
   );
 };
 

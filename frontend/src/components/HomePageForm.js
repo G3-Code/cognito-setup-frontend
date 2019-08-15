@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/App.css";
-import { connect } from "react-redux";
-import { home } from "../actions";
+//import { connect } from "react-redux";
+//import { home } from "../actions";
 
 class HomePageForm extends React.Component {
   componentDidMount() {}
@@ -19,7 +19,4 @@ class HomePageForm extends React.Component {
   }
 }
 
-export default connect(
-  null,
-  { home }
-)(HomePageForm);
+export default HomePageForm;

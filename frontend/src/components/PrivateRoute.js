@@ -17,7 +17,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
             ":: PRIVATE ROUTE - TOKEN NOT AVAILABLE" +
               localStorage.getItem("token")
           );
-          return <Redirect to="/login" />;
+          return <Redirect to="/" />;
         }
       }}
     />

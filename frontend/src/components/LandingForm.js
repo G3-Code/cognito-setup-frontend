@@ -1,19 +1,13 @@
 import React from "react";
-//import { LOGIN_URL } from "../config/aws-user-pool-config";
 import "../styles/App.css";
-import { NavLink } from "react-router-dom";
 
-const LandingForm = () => {
+const LandingForm = props => {
+  console.log(JSON.stringify(props));
   return (
     <header className="App-header">
       <div>How's the water</div>
       <div className="nav_links">
-        <NavLink to="/login" className="login_link">
-          Login
-        </NavLink>
-        <NavLink to="/register" className="login_link">
-          Register
-        </NavLink>
+        <div className="login_link">Login</div>
       </div>
     </header>
   );
