@@ -6,3 +6,11 @@ export const getData = data => dispatch => {
   dispatch({ type: FETCHING_DATA, payload: data });
   dispatch({ type: FETCHING_DATA_SUCCESS, payload: data });
 };
+
+export const ACTIVATE_LOGOUT = "ACTIVATE_LOGOUT";
+export const ACTIVATE_LOGOUT_SUCCESS = "ACTIVATE_LOGOUT_SUCCESS";
+export const activateLogout = () => dispatch => {
+  console.log("ACTION:: ACTIVATE LOGOUT :: -------");
+  dispatch({ type: ACTIVATE_LOGOUT });
+  dispatch({ type: ACTIVATE_LOGOUT_SUCCESS });
+};

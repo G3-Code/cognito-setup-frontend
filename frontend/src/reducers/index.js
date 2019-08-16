@@ -1,4 +1,9 @@
-import { FETCHING_DATA, FETCHING_DATA_SUCCESS } from "../actions";
+import {
+  FETCHING_DATA,
+  FETCHING_DATA_SUCCESS,
+  ACTIVATE_LOGOUT,
+  ACTIVATE_LOGOUT_SUCCESS
+} from "../actions";
 
 const initialState = {
   isLogged: false,
@@ -16,7 +21,19 @@ const reducer = (state = initialState, action) => {
     case FETCHING_DATA_SUCCESS:
       console.log("::REDUCER :: FETCHING_DATA_SUCCESS :: " + action.payload);
       return {
-        isLoggin: false,
+        isLogging: false,
+        isLogged: true
+      };
+    case ACTIVATE_LOGOUT:
+      console.log("::REDUCER :: ACTIVATE_LOGOUT :: ");
+      return {
+        isLogging: false,
+        isLogged: true
+      };
+    case ACTIVATE_LOGOUT_SUCCESS:
+      console.log("::REDUCER :: ACTIVATE_LOGOUT_SUCCESS :: ");
+      return {
+        isLogging: false,
         isLogged: true
       };
     default:
