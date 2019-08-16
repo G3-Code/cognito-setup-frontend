@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LandingForm from "./LandingForm";
-import HomePageForm from "./HomePageForm";
 import LoginForm from "./LoginForm";
-import PrivateRoute from "./PrivateRoute";
+import Routes from "./Routes";
 import "../styles/App.css";
 import { connect } from "react-redux";
 import { getData } from "../actions";
@@ -29,17 +28,21 @@ class App extends React.Component {
 
   render() {
     console.log(":: APP:: RENDER :: " + this.props.isLogged);
+    const childProps = {
+      isLogged: this.props.isLogged
+    };
     return (
       <Router>
         {/* <Route exact path="/" component={() => <LandingForm auth={Auth} />} /> */}
         <Route exact path="/" component={LandingForm} />
         <Route exact path="/login" component={LoginForm} />
-        <PrivateRoute
+        {/*  <PrivateRoute
           exact
           path="/home"
           component={HomePageForm}
           auth={this.props.isLogged}
-        />
+        /> */}
+        <Routes childProps={childProps} />
       </Router>
     );
   }
