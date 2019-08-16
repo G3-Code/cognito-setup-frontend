@@ -3,26 +3,16 @@ import { Route, Redirect } from "react-router-dom";
 import { Auth } from "aws-amplify";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log(localStorage.getItem("amplify-signin-with-hostedUI"));
+  console.log(rest.auth);
   return (
     <Route
       {...rest}
       render={props => {
-        if (localStorage.getItem("amplify-signin-with-hostedUI")) {
+        if (rest.auth) {
           console.log(":: PRIVATE ROUTE - TOKEN AVAILABLE ::");
-          Auth.currentAuthenticatedUser().then(user => {
-            Auth.userSession(user).then(session =>
-              console.log(JSON.stringify(session.getIdToken().getJwtToken()))
-            );
-          });
+
           return <Component {...props} />;
         } else {
-          Auth.currentAuthenticatedUser().then(user => {
-            Auth.userSession(user).then(session =>
-              console.log(JSON.stringify(session.getIdToken().getJwtToken()))
-            );
-          });
-
           console.log(
             ":: PRIVATE ROUTE - TOKEN NOT AVAILABLE" +
               localStorage.getItem("token")
@@ -32,6 +22,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       }}
     />
   );
+  // if (rest.auth) {
+  //   return <Component {...rest} />;
+  // } else {
+  //   return <Redirect to="/" />;
+  // }
 };
 
 export default PrivateRoute;
