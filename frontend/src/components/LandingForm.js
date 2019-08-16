@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/App.css";
-import { Auth } from "aws-amplify";
+// import { Auth } from "aws-amplify";
+import { NavLink } from "react-router-dom";
 
 const LandingForm = props => {
   console.log(
@@ -11,7 +12,8 @@ const LandingForm = props => {
     <header className="App-header">
       <div>How's the water</div>
       <div className="nav_links">
-        <div onClick={() => Auth.federatedSignIn()}>Login</div>
+        {/* <div onClick={() => Auth.federatedSignIn()}>Login</div> */}
+        <NavLink to="/login"> Login</NavLink>
       </div>
     </header>
   );
