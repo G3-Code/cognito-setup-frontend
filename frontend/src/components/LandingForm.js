@@ -13,7 +13,9 @@ const LandingForm = props => {
       <div>How's the water</div>
       <div className="nav_links">
         {/* <div onClick={() => Auth.federatedSignIn()}>Login</div> */}
-        <NavLink to="/login"> Login</NavLink>
+        <NavLink to="/login" className="login_link">
+          Login
+        </NavLink>
       </div>
     </header>
   );
