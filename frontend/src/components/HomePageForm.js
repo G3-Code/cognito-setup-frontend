@@ -5,8 +5,24 @@ import { activateLogout } from "../actions";
 import { Auth } from "aws-amplify";
 
 class HomePageForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {}
+    };
+  }
   componentDidMount() {
-    console.log("-----------------" + Auth);
+    console.log(
+      "-----------------" +
+        Auth.currentAuthenticatedUser()
+          .then(user => {
+            console.log(user);
+            this.setState({
+              user: user
+            });
+          })
+          .catch(err => console.log(err))
+    );
   }
   handleLogout = async e => {
     await Auth.signOut();
@@ -14,6 +30,11 @@ class HomePageForm extends React.Component {
     this.props.history.push("/");
   };
   render() {
+    console.log("************" + JSON.stringify(this.state.user.attributes));
+    if (this.state.user.attributes) {
+      const userInfo = JSON.parse(this.state.user.attributes);
+      console.log(JSON.parse(userInfo));
+    }
     return (
       <header className="App-header">
         <div>How's the water!</div>
@@ -26,8 +47,12 @@ class HomePageForm extends React.Component {
     );
   }
 }
-
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
 export default connect(
-  null,
+  mapStateToProps,
   { activateLogout }
 )(HomePageForm);

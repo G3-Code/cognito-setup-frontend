@@ -7,7 +7,8 @@ import {
 
 const initialState = {
   isLogged: false,
-  isLoggin: false
+  isLoggin: false,
+  user: {}
 };
 
 const reducer = (state = initialState, action) => {

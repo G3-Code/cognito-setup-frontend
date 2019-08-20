@@ -28,6 +28,7 @@ class App extends React.Component {
 
   render() {
     console.log(":: APP:: RENDER :: " + this.props.isLogged);
+    console.log("test");
     const childProps = {
       isLogged: this.props.isLogged
     };

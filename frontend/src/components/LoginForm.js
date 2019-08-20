@@ -6,7 +6,7 @@ import { Auth } from "aws-amplify";
 
 const LoginForm = () => {
   return (
-    <fragment>
+    <div>
       <header className="App-header">
         <div>How's the water</div>
       </header>
@@ -42,7 +42,7 @@ const LoginForm = () => {
           </div>
         </div>
       </div>
-    </fragment>
+    </div>
   );
 };
 
